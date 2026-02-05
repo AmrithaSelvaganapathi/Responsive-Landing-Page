@@ -19,7 +19,50 @@
     </header>
 
     <main>
+<section class="main"> <!--Main section of the webpage-->
+      <h1>Clean Responsive Landing Page</h1> <!--Main heading-->
+      <p>Welcome to our responsive landing page. This page adjusts seamlessly to different screen sizes which allows us to provide an optimal viewing experience on all devices.</p> <!--Paragraph describing the webpage-->
+      <a href="#features" class="button">View Features</a> <!--Button linking to the "Features" section of the webpage-->
+      <a href="#products" class="button">View Products</a> <!--Button linking to the "Products" section of the webpage-->
+      <a href="#contact" class="button">View Contact</a> <!--Button linking to the "Contact" section of the webpage-->
+</section>
+<section id="features" class="section"> <!--Section for "Features" with an ID for linking-->
+    <h2>Features</h2> <!--Subheading for the "Features" section-->
+    <p>My website offers the following features:</p> <!--Paragraph introducing the features-->
+    <div class="cards"> <!--Container for feature cards-->
+        <article class="card">1. Fast</article> <!--Individual feature card-->
+        <article class="card">2. Responsive</article> <!--Individual feature card-->
+        <article class="card">3. Simple</article> <!--Individual feature card-->
+      </div>
+</section>
+<section id="products" class="section"> <!--Section for "Products" with an ID for linking-->
+    <h2>Products</h2> <!--Subheading for the "Products" section-->
+<div class="product-grid"> <!--Container for product cards-->
+        <div class="product-card">Product 1</div> <!--Individual product card-->
+        <div class="product-card">Product 2</div> <!--Individual product card-->
+        <div class="product-card">Product 3</div> <!--Individual product card-->
+        <div class="product-card">Product 4</div> <!--Individual product card-->
+      </div>
+</section>
+<section id="contact" class="section"> <!--Section for "Contact" with an ID for linking-->
+      <h2>Contact</h2> <!--Subheading for the "Contact" section-->
 
+      <form> <!--Contact form--> <!--tells the computer that everything in this is part of a user input submission-->
+        <label>
+            Name <!--Text indicating the purpose of the input field-->
+            <input type="text" required /> <!--Input field for name, marked as required-->
+        </label>
+        <label> <!--Label for the Email input field-->
+          Email <!--Text indicating the purpose of the input field-->
+          <input type="email" required /> <!--Input field for email address, marked as required-->
+        </label>
+        <button class="button" type="submit">Submit</button> <!--Submit button for the form-->
+      </form>
+    </section>
     </main>
+
+     <footer class="site-footer"> <!--Footer section of the webpage-->
+    <p>Copyright © 2026 MyBrand. All rights reserved.</p> <!--Copyright section-->
+  </footer>
     </body>
 </html>
