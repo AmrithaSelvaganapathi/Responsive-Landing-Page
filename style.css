@@ -1,0 +1,31 @@
+/*Every box uses it's own border and padding in it's size calculations */
+* {
+  box-sizing: border-box;
+}
+
+/* Basic body styling */
+body {
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Set a font */
+  line-height: 1.6; /* Improve readability by controlling the spacing between lines */
+  color: #111; /* Sets the color */
+}
+
+/* Header syling */
+.site-header {
+  padding: 16px; /* Add padding around the header */
+  border-bottom: 1px solid #dfa2a2; /* Light border at the bottom */
+}
+
+/* Navbar layout */
+.nav {
+  display: flex; /* Using flexbox for responsive navigation */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Space out items */
+  gap: 16px; /* Space between items */
+}
+
+body {
+  background: hotpink;
+}
+
