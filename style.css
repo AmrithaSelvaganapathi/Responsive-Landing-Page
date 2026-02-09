@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-/* Basic body styling */
+/* Basic body */
 body {
   margin: 0; /* Remove default margin */
   font-family: Arial, sans-serif; /* Set a font */
@@ -25,7 +25,47 @@ body {
   gap: 16px; /* Space between items */
 }
 
-body {
-  background: hotpink;
+/* Nav links */
+.nav-links {
+  list-style: none; /* removes bullet points or the numbering from the list */
+  display: flex; /* Use flexbox for horizontal layout */
+  gap: 16px; /* the spacing between links */
+  padding: 0; /* remove default padding */
+  margin: 0;  /* remove default margin */
 }
+
+.nav-links a { /* Style for all (the 'a') the links in nav-links */
+  text-decoration: none; /* remove underline */
+  color: #e80da3; /* link color */
+}
+
+/* Main section */
+.main {
+  padding: 48px 16px;
+}
+
+/* Shared spacing for sections */
+.section {
+  padding: 32px 16px;
+}
+
+/* Feature cards */
+.cards {
+  display: flex; /* Use flexbox for layout */
+  gap: 16px; /* spacing between cards */
+  flex-wrap: wrap; /* allows wrap on small screens so that instead of 
+  forcing everything to be on one line, it allows the creation of new lines as needed  */
+}
+
+.card {
+  border: 1px solid #cf5858; /* light border */
+  border-radius: 8px; /* rounded corners */
+  padding: 16px; /* padding inside the card */
+  box-shadow: 0 2px 4px rgba(183, 70, 70, 0.1); /* subtle shadow */
+  flex: 1 1 160px; /* grow to the size of the container, shrink equally 
+  but not below the minimum width, minimum width */
+}
+
+
+
 
