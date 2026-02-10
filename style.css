@@ -66,6 +66,46 @@ body {
   but not below the minimum width, minimum width */
 }
 
+/* Product grid */
+.product-grid {
+  display: grid; /* Makes the containers in a grid format */
+  gap: 16px; /* spacing between grid items */
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* responsive columns:
+  Creates columns that automatically fit as many items as possible 
+  with each column being atleast 160px wide and growing to fill the
+  available space to look more visually appealing */
+}
+
+.product-card {
+  border: 1px solid #eee; /* light border */
+  border-radius: 8px; /* rounded corners */
+  padding: 16px; /* padding inside the card */
+  background-color: #b486a5; /* light background color */
+}
+
+/* Button styling */
+.button {
+  display: inline-block; /* allows setting width, height, padding, margin */
+  padding: 10px 14px; /* vertical and horizontal padding */
+  border: 1px solid #111; /* dark border */
+  color: #c57bcb; /* light text color */
+  text-decoration: none; /* removes underline */
+  background: #f4c2c2; /* light background color */
+  cursor: pointer; /* pointer cursor on hover */
+}
+.button:hover {
+  background-color: #ac5151; /* light background on hover */
+  color: #000000; /* white text on hover */
+}
+
+/* Footer */
+.site-footer {
+  padding: 24px 16px; /* padding around the footer */
+  border-top: 1px solid #7e0a0a; /* light border at the top */
+}
+
+
+
 
 
 
