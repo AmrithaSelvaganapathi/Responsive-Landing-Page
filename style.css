@@ -1,107 +1,198 @@
-/*Every box uses it's own border and padding in it's size calculations */
+/* Reset and box model */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Include padding and border in element width/height calculations */
 }
 
-/* Basic body */
+/* Color palette - CSS variables for easy maintenance and consistency */
+:root {
+  --primary-pink: #e91e63; /* Main brand color for primary elements */
+  --light-pink: #f8bbd0; /* Light pink for secondary elements */
+  --pale-pink: #fce4ec; /* Very light pink for backgrounds */
+  --dark-pink: #c2185b; /* Dark pink for hover states and accents */
+  --accent-pink: #f06292; /* Accent pink for gradients and highlights */
+  --text-dark: #4a4a4a; /* Dark gray for body text */
+  --text-light: #ffffff; /* White for text on dark backgrounds */
+}
+
+/* Base body styles */
 body {
-  margin: 0; /* Remove default margin */
-  font-family: Arial, sans-serif; /* Set a font */
-  line-height: 1.6; /* Improve readability by controlling the spacing between lines */
-  color: #111; /* Sets the color */
+  margin: 0; /* Remove default browser margin */
+  padding: 0; /* Remove default browser padding */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font stack */
+  line-height: 1.6; /* Improve readability with generous line spacing */
+  color: var(--text-dark); /* Default text color */
+  background-color: #fafafa; /* Subtle off-white background */
 }
 
-/* Header syling */
+/* Page title styling */
+.title {
+  color: var(--primary-pink); /* Use primary pink for visibility */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center title horizontally */
+  font-size: 3rem; /* Large, prominent heading */
+  font-weight: 700; /* Bold weight for emphasis */
+  margin: 0; /* Remove default margins */
+  padding: 2rem 1.5rem; /* Consistent padding around title */
+  letter-spacing: -1px; /* Slightly tighter letter spacing for elegance */
+}
+
+/* Header section with navigation background */
 .site-header {
-  padding: 16px; /* Add padding around the header */
-  border-bottom: 1px solid #dfa2a2; /* Light border at the bottom */
+  padding: 1rem 1.5rem; /* Padding inside header */
+  border-bottom: 2px solid var(--light-pink); /* Subtle pink border separator */
+  background-color: var(--pale-pink); /* Light pink background */
+  margin-bottom: 2rem; /* Space between header and main content */
 }
 
-/* Navbar layout */
+/* Navigation bar flexbox layout */
 .nav {
-  display: flex; /* Using flexbox for responsive navigation */
-  align-items: center; /* Vertically center items */
-  justify-content: space-between; /* Space out items */
-  gap: 16px; /* Space between items */
+  display: flex; /* Use flexbox for responsive layout */
+  align-items: center; /* Vertically center nav items */
+  justify-content: space-between; /* Distribute items with space between */
+  gap: 2rem; /* Space between nav elements */
+  max-width: 1200px; /* Limit max width for large screens */
+  margin: 0 auto; /* Center nav container */
 }
 
-/* Nav links */
+/* Navigation links list styling */
 .nav-links {
-  list-style: none; /* removes bullet points or the numbering from the list */
-  display: flex; /* Use flexbox for horizontal layout */
-  gap: 16px; /* the spacing between links */
-  padding: 0; /* remove default padding */
-  margin: 0;  /* remove default margin */
+  list-style: none; /* Remove default bullet points */
+  display: flex; /* Horizontal layout for links */
+  gap: 2rem; /* Space between individual links */
+  padding: 0; /* Remove default list padding */
+  margin: 0; /* Remove default list margin */
 }
 
-.nav-links a { /* Style for all (the 'a') the links in nav-links */
-  text-decoration: none; /* remove underline */
-  color: #e80da3; /* link color */
+/* Individual navigation link styling */
+.nav-links a {
+  text-decoration: none; /* Remove underline from links */
+  color: var(--primary-pink); /* Pink text for consistency */
+  font-weight: 500; /* Medium weight for readability */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
 }
 
-/* Main section */
+/* Navigation link hover effect */
+.nav-links a:hover {
+  color: var(--dark-pink); /* Darker pink on hover for feedback */
+}
+
+/* Main content section */
 .main {
-  padding: 48px 16px;
+  padding: 3rem 1.5rem; /* Generous padding for breathing room */
+  max-width: 1200px; /* Limit max width for readability */
+  margin: 0 auto; /* Center content */
 }
 
-/* Shared spacing for sections */
+/* Generic section spacing and layout */
 .section {
-  padding: 32px 16px;
+  padding: 3rem 1.5rem; /* Consistent internal padding */
+  margin-bottom: 2rem; /* Space between sections */
 }
 
-/* Feature cards */
+/* Feature cards container */
 .cards {
-  display: flex; /* Use flexbox for layout */
-  gap: 16px; /* spacing between cards */
-  flex-wrap: wrap; /* allows wrap on small screens so that instead of 
-  forcing everything to be on one line, it allows the creation of new lines as needed  */
+  display: flex; /* Flexbox layout for cards */
+  gap: 1.5rem; /* Space between cards */
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  margin-bottom: 2rem; /* Space below card section */
 }
 
+/* Individual feature card styling */
 .card {
-  border: 1px solid #cf5858; /* light border */
-  border-radius: 8px; /* rounded corners */
-  padding: 16px; /* padding inside the card */
-  box-shadow: 0 2px 4px rgba(183, 70, 70, 0.1); /* subtle shadow */
-  flex: 1 1 160px; /* grow to the size of the container, shrink equally 
-  but not below the minimum width, minimum width */
+  border: none; /* Remove borders for modern look */
+  border-radius: 12px; /* Rounded corners for softness */
+  padding: 1.5rem; /* Internal padding for content spacing */
+  background: linear-gradient(135deg, var(--pale-pink) 0%, var(--light-pink) 100%); /* Subtle gradient background */
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.12); /* Soft shadow for depth */
+  flex: 1 1 200px; /* Flexible sizing with 200px minimum */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
 }
 
-/* Product grid */
+/* Card hover effect - lift and enhance shadow */
+.card:hover {
+  transform: translateY(-4px); /* Lift card up slightly */
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.18); /* Increase shadow for depth */
+}
+
+/* Product grid layout */
 .product-grid {
-  display: grid; /* Makes the containers in a grid format */
-  gap: 16px; /* spacing between grid items */
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* responsive columns:
-  Creates columns that automatically fit as many items as possible 
-  with each column being atleast 160px wide and growing to fill the
-  available space to look more visually appealing */
+  display: grid; /* CSS Grid for responsive layout */
+  gap: 1.5rem; /* Space between grid items */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns that fit available space */
+  margin-bottom: 2rem; /* Space below grid */
 }
 
+/* Individual product card styling */
 .product-card {
-  border: 1px solid #eee; /* light border */
-  border-radius: 8px; /* rounded corners */
-  padding: 16px; /* padding inside the card */
-  background-color: #b486a5; /* light background color */
+  border: none; /* Remove borders for clean aesthetic */
+  border-radius: 12px; /* Rounded corners matching other cards */
+  padding: 1.5rem; /* Internal spacing for content */
+  background: linear-gradient(135deg, #f8bbd0 0%, #f48fb1 100%); /* Warm pink gradient */
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.12); /* Subtle shadow for elevation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
 }
 
-/* Button styling */
+/* Product card hover effect - similar to feature cards */
+.product-card:hover {
+  transform: translateY(-4px); /* Lift card up on hover */
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.18); /* Enhanced shadow on hover */
+}
+
+/* Call-to-action button styling */
 .button {
-  display: inline-block; /* allows setting width, height, padding, margin */
-  padding: 10px 14px; /* vertical and horizontal padding */
-  border: 1px solid #111; /* dark border */
-  color: #c57bcb; /* light text color */
-  text-decoration: none; /* removes underline */
-  background: #f4c2c2; /* light background color */
-  cursor: pointer; /* pointer cursor on hover */
-}
-.button:hover {
-  background-color: #ac5151; /* light background on hover */
-  color: #000000; /* white text on hover */
+  display: inline-block; /* Allow width/height/padding control */
+  padding: 0.75rem 1.5rem; /* Vertical and horizontal padding */
+  border: none; /* Remove default border */
+  border-radius: 6px; /* Slightly rounded corners */
+  color: var(--text-light); /* White text for contrast */
+  text-decoration: none; /* Remove link underline */
+  background: linear-gradient(135deg, var(--primary-pink) 0%, var(--accent-pink) 100%); /* Pink gradient background */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-weight: 600; /* Bold text for prominence */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
 }
 
-/* Footer */
+/* Button hover state - darker gradient and elevation */
+.button:hover {
+  background: linear-gradient(135deg, var(--dark-pink) 0%, var(--primary-pink) 100%); /* Darker pink gradient on hover */
+  transform: translateY(-2px); /* Slight lift for depth */
+  box-shadow: 0 6px 16px rgba(233, 30, 99, 0.3); /* Add shadow for elevation effect */
+}
+
+/* Primary call-to-action buttons - full width layout */
+.button1 {
+  display: block; /* Full width block display */
+  width: 100%; /* Take up full width of container */
+  padding: 1.25rem 1.5rem; /* Larger padding than submit button for prominence */
+  margin-bottom: 1rem; /* Space between multiple button1 elements */
+  border: 2px solid var(--primary-pink); /* Outlined border style for distinction */
+  border-radius: 8px; /* Slightly more rounded than submit button */
+  color: var(--primary-pink); /* Pink text color */
+  text-decoration: none; /* Remove link underline */
+  background-color: transparent; /* Transparent background for outlined style */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-weight: 600; /* Bold text for prominence */
+  font-size: 1.05rem; /* Slightly larger text than submit button */
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+  text-align: center; /* Center text inside button */
+}
+
+/* Button1 hover state - filled background and color inversion */
+.button1:hover {
+  background: linear-gradient(135deg, var(--primary-pink) 0%, var(--accent-pink) 100%); /* Fill with pink gradient */
+  color: var(--text-light); /* Change text to white for contrast */
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.25); /* Enhanced shadow for depth */
+  transform: translateY(-2px); /* Slight lift for interactive feedback */
+}
+
+/* Footer section styling */
 .site-footer {
-  padding: 24px 16px; /* padding around the footer */
-  border-top: 1px solid #7e0a0a; /* light border at the top */
+  padding: 2rem 1.5rem; /* Padding inside footer */
+  border-top: 2px solid var(--light-pink); /* Pink border separator at top */
+  background-color: var(--pale-pink); /* Light pink background matching header */
+  margin-top: 3rem; /* Space between content and footer */
+  text-align: center; /* Center footer text */
+  color: var(--text-dark); /* Dark text for readability */
 }
 
 
